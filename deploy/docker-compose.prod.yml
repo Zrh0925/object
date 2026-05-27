@@ -17,9 +17,7 @@ services:
       retries: 10
 
   server:
-    build:
-      context: .
-      dockerfile: ./server/Dockerfile
+    image: zrhadmin123/my-object:server
     container_name: todolist-server
     restart: unless-stopped
     depends_on:
@@ -34,9 +32,7 @@ services:
       DB_NAME: todolist
 
   client:
-    build:
-      context: .
-      dockerfile: ./client/Dockerfile
+    image: zrhadmin123/my-object:client
     container_name: todolist-client
     restart: unless-stopped
     ports:
